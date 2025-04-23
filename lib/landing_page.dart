@@ -58,7 +58,6 @@ class _LandingPageState extends State<LandingPage> {
     }
   }
 
-  // Function to update hover state for a specific index
   void _onHover(bool isHovered, int index) {
     setState(() {
       isHoveredList[index] = isHovered;
@@ -67,16 +66,13 @@ class _LandingPageState extends State<LandingPage> {
 
  _downloadAndOpenCV() async {
     try {
-      // Load the file from assets
       final ByteData data = await rootBundle.load('assets/images/MuhammadHamza.pdf');
       final directory = await getApplicationDocumentsDirectory();
       final filePath = '${directory.path}/MuhammadHamza.pdf';
 
-      // Write the file to device storage
       final File file = File(filePath);
       await file.writeAsBytes(data.buffer.asUint8List());
 
-      // Open the file using open_file package
       await OpenFile.open(filePath);
     } catch (e) {
       print("Error opening CV: $e");
@@ -804,7 +800,7 @@ class _LandingPageState extends State<LandingPage> {
                                              CrossAxisAlignment.start,
                                              children: [
                                                Text(
-                                                 '10+',
+                                                 '20+',
                                                  style: GoogleFonts.onest(
                                                      color: primaryColor,
                                                      fontWeight: FontWeight.w700,
@@ -830,7 +826,7 @@ class _LandingPageState extends State<LandingPage> {
                                              CrossAxisAlignment.start,
                                              children: [
                                                Text(
-                                                 '2',
+                                                 '3',
                                                  style: GoogleFonts.onest(
                                                      color: primaryColor,
                                                      fontWeight: FontWeight.w700,
@@ -856,7 +852,7 @@ class _LandingPageState extends State<LandingPage> {
                                          crossAxisAlignment: CrossAxisAlignment.start,
                                          children: [
                                            Text(
-                                             '1.5+',
+                                             '2+',
                                              style: GoogleFonts.onest(
                                                  color: primaryColor,
                                                  fontWeight: FontWeight.w700,
